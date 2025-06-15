@@ -118,31 +118,63 @@
             >
                 ← Back to Home
             </button>
-            <h1>imVCode - File List</h1>
+            <h1>File List</h1>
         </div>
 
         <div class="file-list">
             <div class="file-card">
                 <div class="file-info">
-                    <h3>Document.pdf</h3>
-                    <p>Size: 2.4 MB</p>
+                    <h3>bedrock-server-1.21.84.1.zip</h3>
+                    <p>Size: 67.24 MB</p>
                 </div>
-                <button class="download-btn">Download</button>
+                <button
+                    class="download-btn"
+                    onclick="downloadFile('./files/bedrock-server-1.21.84.1.zip')"
+                >
+                    Download
+                </button>
             </div>
+
             <div class="file-card">
                 <div class="file-info">
-                    <h3>Presentation.pptx</h3>
-                    <p>Size: 5.1 MB</p>
+                    <h3>Better on Bedrock 1.1.mcaddon</h3>
+                    <p>Size: 76.12 MB</p>
                 </div>
-                <button class="download-btn">Download</button>
+                <button
+                    class="download-btn"
+                    onclick="downloadFile('./files/Better on Bedrock 1.1.mcaddon')"
+                >
+                    Download
+                </button>
             </div>
+
             <div class="file-card">
                 <div class="file-info">
-                    <h3>Image.jpg</h3>
-                    <p>Size: 1.8 MB</p>
+                    <h3>better oresv2.mcaddon</h3>
+                    <p>Size: 5.13 MB</p>
                 </div>
-                <button class="download-btn">Download</button>
+                <button
+                    class="download-btn"
+                    onclick="downloadFile('./files/better oresv2.mcaddon')"
+                >
+                    Download
+                </button>
             </div>
         </div>
+
+        <script>
+            // Fungsi untuk mendownload file
+            function downloadFile(filename) {
+                // Membuat elemen <a> sementara
+                const link = document.createElement("a");
+                link.href = filename;
+                link.download = filename;
+
+                // Simulasikan klik
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        </script>
     </body>
 </html>
