@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>imVCode - File List</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: "Arial", sans-serif;
+                background: linear-gradient(
+                    45deg,
+                    #a1c4fd,
+                    #c2e9fb,
+                    #f6d365,
+                    #fda085
+                );
+                background-size: 400% 400%;
+                animation: gradientBG 15s ease infinite;
+                min-height: 100vh;
+            }
+            @keyframes gradientBG {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            h1 {
+                color: white;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .back-btn {
+                padding: 10px 20px;
+                background: rgba(255, 255, 255, 0.3);
+                border: none;
+                border-radius: 50px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                margin-bottom: 20px;
+                backdrop-filter: blur(5px);
+            }
+            .file-list {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .file-card {
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: transform 0.3s;
+            }
+            .file-card:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.3);
+            }
+            .file-info {
+                color: white;
+            }
+            .download-btn {
+                padding: 8px 16px;
+                background: rgba(255, 255, 255, 0.4);
+                border: none;
+                border-radius: 50px;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            .download-btn:hover {
+                background: rgba(255, 255, 255, 0.6);
+            }
+            .liquid-shape {
+                position: fixed;
+                width: 300px;
+                height: 300px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+                animation: liquidMove 15s infinite alternate;
+                z-index: -1;
+            }
+            @keyframes liquidMove {
+                0% {
+                    transform: translate(0, 0) rotate(0deg);
+                }
+                100% {
+                    transform: translate(200px, 100px) rotate(30deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="liquid-shape" style="top: 10%; left: 5%"></div>
+        <div class="liquid-shape" style="bottom: 10%; right: 5%"></div>
+
+        <div class="header">
+            <button
+                class="back-btn"
+                onclick="window.location.href='index.html'"
+            >
+                ← Back to Home
+            </button>
+            <h1>imVCode - File List</h1>
+        </div>
+
+        <div class="file-list">
+            <div class="file-card">
+                <div class="file-info">
+                    <h3>Document.pdf</h3>
+                    <p>Size: 2.4 MB</p>
+                </div>
+                <button class="download-btn">Download</button>
+            </div>
+            <div class="file-card">
+                <div class="file-info">
+                    <h3>Presentation.pptx</h3>
+                    <p>Size: 5.1 MB</p>
+                </div>
+                <button class="download-btn">Download</button>
+            </div>
+            <div class="file-card">
+                <div class="file-info">
+                    <h3>Image.jpg</h3>
+                    <p>Size: 1.8 MB</p>
+                </div>
+                <button class="download-btn">Download</button>
+            </div>
+        </div>
+    </body>
+</html>
