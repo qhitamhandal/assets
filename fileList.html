@@ -3,11 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>imVCode - File List</title>
+        <title>File List</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
         <style>
+            :root {
+                --glass-color: rgba(255, 255, 255, 0.2);
+                --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+                --glass-blur: blur(15px);
+            }
+
             body {
                 margin: 0;
-                padding: 20px;
+                padding: 0;
                 font-family: "Arial", sans-serif;
                 background: linear-gradient(
                     45deg,
@@ -19,7 +29,11 @@
                 background-size: 400% 400%;
                 animation: gradientBG 15s ease infinite;
                 min-height: 100vh;
+                color: white;
+                display: flex;
+                flex-direction: column;
             }
+
             @keyframes gradientBG {
                 0% {
                     background-position: 0% 50%;
@@ -31,14 +45,18 @@
                     background-position: 0% 50%;
                 }
             }
+
             .header {
                 text-align: center;
                 margin-bottom: 30px;
+                padding-top: 20px;
             }
+
             h1 {
                 color: white;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
+
             .back-btn {
                 padding: 10px 20px;
                 background: rgba(255, 255, 255, 0.3);
@@ -49,33 +67,42 @@
                 cursor: pointer;
                 margin-bottom: 20px;
                 backdrop-filter: blur(5px);
+                -webkit-tap-highlight-color: transparent;
             }
+
             .file-list {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
                 max-width: 800px;
                 margin: 0 auto;
+                padding: 0 20px;
+                flex: 1;
             }
+
             .file-card {
-                background: rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
+                background: var(--glass-color);
+                backdrop-filter: var(--glass-blur);
                 border-radius: 15px;
                 padding: 20px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                border: var(--glass-border);
                 transition: transform 0.3s;
+                -webkit-tap-highlight-color: transparent;
             }
+
             .file-card:hover {
                 transform: translateY(-5px);
                 background: rgba(255, 255, 255, 0.3);
             }
+
             .file-info {
                 color: white;
             }
+
             .download-btn {
                 padding: 8px 16px;
                 background: rgba(255, 255, 255, 0.4);
@@ -84,10 +111,13 @@
                 color: white;
                 cursor: pointer;
                 transition: all 0.3s;
+                -webkit-tap-highlight-color: transparent;
             }
+
             .download-btn:hover {
                 background: rgba(255, 255, 255, 0.6);
             }
+
             .liquid-shape {
                 position: fixed;
                 width: 300px;
@@ -97,12 +127,62 @@
                 animation: liquidMove 15s infinite alternate;
                 z-index: -1;
             }
+
             @keyframes liquidMove {
                 0% {
                     transform: translate(0, 0) rotate(0deg);
                 }
                 100% {
                     transform: translate(200px, 100px) rotate(30deg);
+                }
+            }
+
+            /* Footer */
+            footer {
+                background: var(--glass-color);
+                backdrop-filter: var(--glass-blur);
+                border-top: var(--glass-border);
+                padding: 20px 5%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 40px;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .social-links a {
+                color: white;
+                font-size: 1.5rem;
+                transition: transform 0.3s;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .social-links a:hover {
+                transform: translateY(-5px);
+            }
+
+            .copyright {
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
+            @media (max-width: 768px) {
+                .file-list {
+                    width: 90%;
+                }
+
+                footer {
+                    padding: 15px;
+                }
+
+                .social-links {
+                    gap: 15px;
                 }
             }
         </style>
@@ -124,12 +204,12 @@
         <div class="file-list">
             <div class="file-card">
                 <div class="file-info">
-                    <h3>bedrock-server-1.21.84.1.zip</h3>
-                    <p>Size: 67.24 MB</p>
+                    <h3>egg-generic.tar</h3>
+                    <p>Size: 81.41 kB</p>
                 </div>
                 <button
                     class="download-btn"
-                    onclick="downloadFile('./files/bedrock-server-1.21.84.1.zip')"
+                    onclick="downloadFile('./files/egg-generic.tar')"
                 >
                     Download
                 </button>
@@ -137,12 +217,12 @@
 
             <div class="file-card">
                 <div class="file-info">
-                    <h3>Better on Bedrock 1.1.mcaddon</h3>
-                    <p>Size: 76.12 MB</p>
+                    <h3>egg-gta.tar</h3>
+                    <p>Size: 18.43 kB</p>
                 </div>
                 <button
                     class="download-btn"
-                    onclick="downloadFile('./files/Better on Bedrock 1.1.mcaddon')"
+                    onclick="downloadFile('./files/egg-gta.tar')"
                 >
                     Download
                 </button>
@@ -150,27 +230,39 @@
 
             <div class="file-card">
                 <div class="file-info">
-                    <h3>better oresv2.mcaddon</h3>
-                    <p>Size: 5.13 MB</p>
+                    <h3>egg-minecraft.tar</h3>
+                    <p>Size: 231 kB</p>
                 </div>
                 <button
                     class="download-btn"
-                    onclick="downloadFile('./files/better oresv2.mcaddon')"
+                    onclick="downloadFile('./files/egg-minecraft.tar')"
                 >
                     Download
                 </button>
             </div>
         </div>
 
+        <footer>
+            <div class="social-links">
+                <a href="https://www.instagram.com/robert_e._allen"
+                    ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="https://wa.me/6282225907841"
+                    ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="https://github.com/qhitamhandal"
+                    ><i class="fab fa-github"></i
+                ></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">Made by A.I (DeepSeek) with 🤍 - Razael</div>
+        </footer>
+
         <script>
-            // Fungsi untuk mendownload file
             function downloadFile(filename) {
-                // Membuat elemen <a> sementara
                 const link = document.createElement("a");
                 link.href = filename;
                 link.download = filename;
-
-                // Simulasikan klik
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
