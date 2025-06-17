@@ -1,0 +1,37 @@
+:root {
+    --bg-color: rgb(11, 42, 46);
+    --color-1: rgb(92, 101, 72);
+    --color-2: rgb(44, 80, 76);
+    --text: rgb(255, 255, 255);
+    --blur: blur(10px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-image: url("./image/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    font-family: Sans-Serif;
+}
+
+header {
+    backdrop-filter: var(--blur);
+    font-size: 1.5rem;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: bold;
+    font-family: Segoe UI;
+    border: 1.5px solid rgb(255, 255, 255, 0.3);
+    margin: 1rem;
+    border-radius: 12px;
+}

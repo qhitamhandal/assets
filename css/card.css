@@ -1,0 +1,44 @@
+:root {
+    --bg-color: rgb(11, 42, 46);
+    --color-1: rgb(92, 101, 72);
+    --color-2: rgb(44, 80, 76);
+    --color-3: rgb(255, 146, 66);
+    --text-origin: rgb(255, 255, 255);
+    --blur: blur(10px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.card {
+    backdrop-filter: var(--blur);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: 0.3s;
+    border: 1.5px solid rgb(255, 255, 255, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--color-3);
+    text-decoration: none;
+}
